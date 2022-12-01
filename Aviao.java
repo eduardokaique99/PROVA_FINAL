@@ -2,26 +2,28 @@ import java.util.ArrayList;
 
 public class Aviao extends Aeromodelo {
 
-    private String prefixo;
+    private PrefixoAviao<String, String> prefixo;
     private int capacidade;
     private int idCompanhia;
     private Companhia companhia;
 
     private static ArrayList<Aviao> avioes = new ArrayList<>();
 
-    public Aviao(int id, String marca, String modelo, String prefixo, int capacidade, int idCompanhia) {
+    public Aviao(int id, String marca, String modelo, String letras, String numeros, int capacidade, int idCompanhia) throws Exception {
         super(id, marca, modelo);
+        PrefixoAviao<String, String> prefixo = new PrefixoAviao<>(letras, numeros);
+        verificaPrefixo(prefixo);
         this.prefixo = prefixo;
         this.capacidade = capacidade;
 
         setAviao(this);
     }
     
-    public String getPrefixo() {
+    public PrefixoAviao<String, String> getPrefixo() {
         return prefixo;
     }
 
-    public void setMarca(String prefixo) {
+    public void setPrefixo(PrefixoAviao<String, String> prefixo) {
         this.prefixo = prefixo;
     }
 
@@ -41,7 +43,7 @@ public class Aviao extends Aeromodelo {
         this.idCompanhia = idCompanhia;
     }
 
-    public static ArrayList<Aviao> getBicicletas() {
+    public static ArrayList<Aviao> getAviao() {
         return avioes;
     }
 
@@ -57,17 +59,28 @@ public class Aviao extends Aeromodelo {
             + "\nidCompanhia=" + idCompanhia + "\n";
     }
 
-    public static Aviao getBicicletaById(int id) throws Exception {
+    public static Aviao getAviaoById(int id) throws Exception {
         for (Aviao aviao : avioes) {
             if (aviao.getId() == id) {
                 return aviao;
             }
         }
-        throw new Exception("Bicicleta não encontrada");
+        throw new Exception("Avião não encontrado");
+    }
+
+    public static boolean verificaPrefixo(
+        PrefixoAviao<String, String> prefixo
+    ) throws Exception {
+        for (Aviao aviao : avioes) {
+            if (aviao.getPrefixo().equals(prefixo)) {
+                throw new Exception("Prefixo já existe!");
+            }
+        }
+        return true;
     }
 
     public static void excluir(int id) throws Exception {
-        Aviao aviao = getBicicletaById(id);
+        Aviao aviao = getAviaoById(id);
         avioes.remove(aviao);
     }
 }

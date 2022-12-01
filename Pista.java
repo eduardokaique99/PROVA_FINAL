@@ -3,12 +3,14 @@ import java.util.ArrayList;
 public class Pista {
     
     private int id;
-    private String numero;
+    private NumeroPista<String, String> numero;
 
     private static ArrayList<Pista> pistas = new ArrayList<>();
 
-    public Pista(int id, String numero) {
+    public Pista(int id, String letras, String numeros) throws Exception {
         this.id = id;
+        NumeroPista<String, String> numero = new NumeroPista<>(letras, numeros);
+        verificaNumero(numero);
         this.numero = numero;
 
         setPista(this);
@@ -22,11 +24,11 @@ public class Pista {
         this.id = id;
     }
 
-    public String getNumero() {
+    public NumeroPista<String, String> getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(NumeroPista<String, String> numero) {
         this.numero = numero;
     }
 
@@ -62,10 +64,19 @@ public class Pista {
         throw new Exception("Pista não encontrada");
     }
 
+    public static boolean verificaNumero(
+    NumeroPista<String, String> numero
+    ) throws Exception {
+        for (Pista pista : pistas) {
+            if (pista.getNumero().equals(numero)) {
+                throw new Exception("Numero já existe!");
+            }
+        }
+        return true;
+    }
+
     public static void excluir(int id) throws Exception {
         Pista pista = getPistaById(id);
         pistas.remove(pista);
     }
-    
 }
-

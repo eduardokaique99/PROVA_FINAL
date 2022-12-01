@@ -30,13 +30,13 @@ public class Jato extends Aeromodelo {
         public void setCor(String cor) {
             this.cor = cor;
         }
+
+        public static ArrayList<Jato> getJato() {
+            return jatos;
+        }
     
         public static void setJato(Jato jato) {
             jatos.add(jato);
-        }
-    
-        public static ArrayList<Jato> getJato() {
-            return jatos;
         }
     
         @Override
