@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Voo {
 
     private int id;
-    private String numero;
+    private NumeroVoo<String, String> numero;
     private String data;
     private String hora;
     private String origem;
@@ -22,8 +22,10 @@ public class Voo {
 
     private static ArrayList<Voo> voos = new ArrayList<>();
 
-    public Voo(int id, String numero, String data, String hora, String origem, String destino, String piloto, String copiloto, String observacao, int idPista, Pista pista, int idAviao, Aviao aviao, int idHelicoptero, Helicoptero helicoptero, int idJato, Jato jato) throws Exception {
+    public Voo(int id, String letras, String numeros, String data, String hora, String origem, String destino, String piloto, String copiloto, String observacao, int idPista, Pista pista, int idAviao, Aviao aviao, int idHelicoptero, Helicoptero helicoptero, int idJato, Jato jato) throws Exception {
         this.id = id;
+        NumeroVoo<String, String> numero = new NumeroVoo<>(letras, numeros);
+        verificaNumero(numero);
         this.numero = numero;
         this.data = data;
         this.hora = hora;
@@ -53,11 +55,11 @@ public class Voo {
         this.id = id;
     }
 
-    public String getNumero() {
+    public NumeroVoo<String, String> getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(NumeroVoo<String, String> numero) {
         this.numero = numero;
     }
 
@@ -198,9 +200,19 @@ public class Voo {
         throw new Exception("Voo não encontrada");
     }
 
+    public static boolean verificaNumero(
+    NumeroVoo<String, String> numero
+    ) throws Exception {
+        for (Voo voo : voos) {
+            if (voo.getNumero().equals(numero)) {
+                throw new Exception("Numero já existe!");
+            }
+        }
+        return true;
+    }
+
     public static void excluir(int id) throws Exception {
         Voo voo = getVagaById(id);
         voos.remove(voo);
     }
-
 }

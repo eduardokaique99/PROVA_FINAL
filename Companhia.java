@@ -77,6 +77,4 @@ public class Companhia {
         Companhia companhia = getCompanhiaById(id);
         companhias.remove(companhia);
     }
-    
 }
-

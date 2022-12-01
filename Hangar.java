@@ -26,11 +26,11 @@ public class Hangar {
         this.id = id;
     }
 
-    public String getNome() {
+    public String getLocal() {
         return local;
     }
 
-    public void setNome(String local) {
+    public void setLocal(String local) {
         this.local = local;
     }
 
@@ -79,5 +79,4 @@ public class Hangar {
         Hangar hangar = getHangarById(id);
         hangars.remove(hangar);
     }
-    
 }

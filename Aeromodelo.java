@@ -5,7 +5,8 @@ public abstract class Aeromodelo {
     private int id;
     private String marca;
     private String modelo;
-    private ArrayList<Aeromodelo> aeromodelo;
+
+    private ArrayList<Aeromodelo> aeromodelos;
 
     public Aeromodelo(int id, String marca, String modelo) {
         this.id = id;
@@ -56,5 +57,4 @@ public abstract class Aeromodelo {
         }
         return true;
     }
-
 }
