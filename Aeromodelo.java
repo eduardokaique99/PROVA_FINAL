@@ -5,14 +5,14 @@ public abstract class Aeromodelo {
     private int id;
     private String marca;
     private String modelo;
-
     private ArrayList<Aeromodelo> aeromodelos;
+    //ATRIBUTOS DA CLASSE
 
     public Aeromodelo(int id, String marca, String modelo) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
-    }
+    } // CONSTRUTOR DA CLASSE
 
     public int getId() {
         return id;
@@ -38,14 +38,14 @@ public abstract class Aeromodelo {
         this.modelo = modelo;
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public String toString() {
         return "id=" + id 
             + "\nmarca=" + marca
             + "\nmodelo=" + modelo;
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof Aeromodelo)) {
             return false;

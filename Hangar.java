@@ -6,8 +6,8 @@ public class Hangar {
     private String local;
     private int idAviao;
     private Aviao aviao;
-
     private static ArrayList<Hangar> hangars = new ArrayList<>();
+    //ATRIBUTOS DA CLASSE
 
     public void Companhia(int id, String local, int idAviao, Aviao aviao) {
         this.id = id;
@@ -16,7 +16,7 @@ public class Hangar {
         this.aviao = aviao;
 
         setHangar(this);
-    }
+    } // CONSTRUTOR DA CLASSE
 
     public int getId() {
         return id;
@@ -50,14 +50,14 @@ public class Hangar {
         hangars.add(hangar);
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public String toString() {
         return "id=" + id + "\n"
             + "local=" + local + "\n"
             + "idAviao=" + idAviao + "\n";
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public boolean equals(Object obj) {
         if (obj instanceof Hangar) {
             Hangar hangar = (Hangar) obj;
@@ -73,7 +73,7 @@ public class Hangar {
             }
         }
         throw new Exception("Hangar não encontrada");
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA PELO ID
 
     public static void excluir(int id) throws Exception {
         Hangar hangar = getHangarById(id);

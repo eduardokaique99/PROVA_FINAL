@@ -4,8 +4,8 @@ public class Helicoptero extends Aeromodelo {
         
         private String cor;
         private int capacidade;
-
         private static ArrayList<Helicoptero> helicopteros = new ArrayList<>();
+        //ATRIBUTOS DA CLASSE
     
         public Helicoptero(int id, String marca, String modelo, String cor, int capacidade) {
             super(id, marca, modelo);
@@ -13,7 +13,7 @@ public class Helicoptero extends Aeromodelo {
             this.capacidade = capacidade;
 
             setHelicoptero(this);
-        }
+        } // CONSTRUTOR DA CLASSE
 
         public String getCor() {
             return cor;
@@ -31,7 +31,7 @@ public class Helicoptero extends Aeromodelo {
             helicopteros.add(helicoptero);
         }
     
-        @Override
+        @Override // USADO PARA LIMPAR 
         public String toString() {
             return super.toString() 
                 + "\ncapacidade=" + capacidade
@@ -45,7 +45,7 @@ public class Helicoptero extends Aeromodelo {
                 }
             }
             throw new Exception("Helicoptero não encontrado");
-        }
+        } // VERIFICAÇÃO DA EXISTENCIA PELO ID
 
     
         public static void excluir(int id) throws Exception {

@@ -6,8 +6,8 @@ public class Aviao extends Aeromodelo {
     private int capacidade;
     private int idCompanhia;
     private Companhia companhia;
-
     private static ArrayList<Aviao> avioes = new ArrayList<>();
+    //ATRIBUTOS DA CLASSE
 
     public Aviao(int id, String marca, String modelo, String letras, String numeros, int capacidade, int idCompanhia) throws Exception {
         super(id, marca, modelo);
@@ -17,7 +17,7 @@ public class Aviao extends Aeromodelo {
         this.capacidade = capacidade;
 
         setAviao(this);
-    }
+    } // CONSTRUTOR DA CLASSE
     
     public PrefixoAviao<String, String> getPrefixo() {
         return prefixo;
@@ -51,7 +51,7 @@ public class Aviao extends Aeromodelo {
         avioes.add(aviao);
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public String toString() {
         return super.toString() 
             + "\nprefixo=" + prefixo
@@ -66,7 +66,7 @@ public class Aviao extends Aeromodelo {
             }
         }
         throw new Exception("Avião não encontrado");
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA PELO ID
 
     public static boolean verificaPrefixo(
         PrefixoAviao<String, String> prefixo
@@ -77,7 +77,7 @@ public class Aviao extends Aeromodelo {
             }
         }
         return true;
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA DO PREFIXO, PARA NÃO SE REPETIR
 
     public static void excluir(int id) throws Exception {
         Aviao aviao = getAviaoById(id);

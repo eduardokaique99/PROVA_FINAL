@@ -5,8 +5,8 @@ public class Companhia {
     private int id;
     private String nome;
     private String cnpj;
-
     private static ArrayList<Companhia> companhias = new ArrayList<>();
+    //ATRIBUTOS DA CLASSE
 
     public Companhia(int id, String nome, String cnpj) {
         this.id = id;
@@ -14,7 +14,7 @@ public class Companhia {
         this.cnpj = cnpj;
 
         setCompanhia(this);
-    }
+    } // CONSTRUTOR DA CLASSE
 
     public int getId() {
         return id;
@@ -48,14 +48,14 @@ public class Companhia {
         companhias.add(companhia);
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public String toString() {
         return "id=" + id + "\n"
             + "nome=" + nome + "\n"
             + "cnpj=" + cnpj + "\n";
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public boolean equals(Object obj) {
         if (obj instanceof Companhia) {
             Companhia companhia = (Companhia) obj;
@@ -71,7 +71,7 @@ public class Companhia {
             }
         }
         throw new Exception("Companhia não encontrada");
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA PELO ID
 
     public static void excluir(int id) throws Exception {
         Companhia companhia = getCompanhiaById(id);
