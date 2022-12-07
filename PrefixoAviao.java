@@ -1,4 +1,4 @@
-public class PrefixoAviao<K, T> {
+public class PrefixoAviao<K, T> { // CLASSE PARA RECEBER UM CAMPO ONDE POSSUI UMA QUANTIDADE ESPECIFICA DE LETRAS E NUMEROS 
     
     private K letras;
     private T numeros;
@@ -6,7 +6,7 @@ public class PrefixoAviao<K, T> {
     public PrefixoAviao(K letras, T numeros) {
         this.letras = letras;
         this.numeros = numeros;
-    }
+    } // CONSTRUTOR DA CLASSE
 
     public K getLetras() {
         return letras;

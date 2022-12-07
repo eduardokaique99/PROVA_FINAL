@@ -4,8 +4,8 @@ public class Jato extends Aeromodelo {
 
         private int velocidade;
         private String cor;
-    
         private static ArrayList<Jato> jatos = new ArrayList<>();
+        //ATRIBUTOS DA CLASSE
     
         public Jato(int id, String marca, String modelo) {
             super(id, marca, modelo);
@@ -13,7 +13,7 @@ public class Jato extends Aeromodelo {
             this.cor = cor;
 
             setJato(this);
-        }
+        } // CONSTRUTOR DA CLASSE
 
         public int getVelocidade() {
             return velocidade;
@@ -39,24 +39,24 @@ public class Jato extends Aeromodelo {
             jatos.add(jato);
         }
     
-        @Override
+        @Override // USADO PARA LIMPAR 
         public String toString() {
             return super.toString() 
                 + "\nvelocidade=" + velocidade
                 + "\ncor=" + cor + "\n";
         }
     
-        public static Jato getMotoById(int id) throws Exception {
+        public static Jato getJatoById(int id) throws Exception {
             for (Jato jato : jatos) {
                 if (jato.getId() == id) {
                     return jato;
                 }
             }
-            throw new Exception("Moto não encontrada");
-        }
+            throw new Exception("Jato não encontrada");
+        } // VERIFICAÇÃO DA EXISTENCIA PELO ID
     
         public static void excluir(int id) throws Exception {
-            Jato jato = getMotoById(id);
+            Jato jato = getJatoById(id);
             jatos.remove(jato);
         }
     }

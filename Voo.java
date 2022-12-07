@@ -19,8 +19,8 @@ public class Voo {
     private Helicoptero helicoptero;
     private int idJato;
     private Jato jato;
-
     private static ArrayList<Voo> voos = new ArrayList<>();
+    //ATRIBUTOS DA CLASSE
 
     public Voo(int id, String letras, String numeros, String data, String hora, String origem, String destino, String piloto, String copiloto, String observacao, int idPista, Pista pista, int idAviao, Aviao aviao, int idHelicoptero, Helicoptero helicoptero, int idJato, Jato jato) throws Exception {
         this.id = id;
@@ -42,10 +42,9 @@ public class Voo {
         this.helicoptero = helicoptero;
         this.idJato = idJato;
         this.jato = jato;
-        
 
         setVoo(this);
-    }
+    } // CONSTRUTOR DA CLASSE
 
     public int getId() {
         return id;
@@ -163,7 +162,7 @@ public class Voo {
         return voos;
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public String toString() {
         return "id=" + id + "\n" 
              + "numero=" + numero + "\n"
@@ -176,7 +175,7 @@ public class Voo {
              + "observacao=" + observacao + "\n";
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof Voo)) {
             return false;
@@ -198,7 +197,7 @@ public class Voo {
             }
         }
         throw new Exception("Voo não encontrada");
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA PELO ID
 
     public static boolean verificaNumero(
     NumeroVoo<String, String> numero
@@ -209,7 +208,7 @@ public class Voo {
             }
         }
         return true;
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA DO NUMERO DO VOO, PARA NÃO SE REPETIR
 
     public static void excluir(int id) throws Exception {
         Voo voo = getVagaById(id);

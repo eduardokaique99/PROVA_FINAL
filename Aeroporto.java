@@ -151,7 +151,7 @@ public class Aeroporto {
         if (letras.length() != 3) {
             System.out.println("Letras do prefixo inválidas!");
             return;
-        }
+        } // SOLICITA AS LETRAS E NUMEROS NOS RESPECTIVOS TAMANHOS, CASO SEJA DIFERENTE, APRESENTA O ERRO
         System.out.println("Números do Prefixo: ");
         String numeros = scanner.next();
         if (numeros.length() != 4) {
@@ -235,7 +235,7 @@ public class Aeroporto {
             if (letras.length() != 1) {
             System.out.println("Letras do número da pista inválidas!");
             return;
-        }
+        } // SOLICITA AS LETRAS E NUMEROS NOS RESPECTIVOS TAMANHOS, CASO SEJA DIFERENTE, APRESENTA O ERRO
             System.out.println("Números do número da pista: ");
             String numeros = scanner.next();
             if (numeros.length() != 2) {
@@ -272,7 +272,7 @@ public class Aeroporto {
             if (letras.length() != 1) {
             System.out.println("Letras do número do Voo inválidas!");
             return;
-        }
+        } // SOLICITA AS LETRAS E NUMEROS NOS RESPECTIVOS TAMANHOS, CASO SEJA DIFERENTE, APRESENTA O ERRO
             System.out.println("Números do número do Voo: ");
             String numeros = scanner.next();
             if (numeros.length() != 2) {
@@ -292,7 +292,7 @@ public class Aeroporto {
         for (Aviao aviao : Aviao.getAviao()) {
             System.out.println(aviao);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void listarHelicoptero() {
         System.out.println("Listar Helicopteros");
@@ -300,7 +300,7 @@ public class Aeroporto {
         for (Helicoptero helicoptero : Helicoptero.getHelicoptero()) {
             System.out.println(helicoptero);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void listarJato() {
         System.out.println("Listar Jatos");
@@ -308,7 +308,7 @@ public class Aeroporto {
         for (Jato jato : Jato.getJato()) {
             System.out.println(jato);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void listarCompanhia() {
         System.out.println("Listar Companhias");
@@ -316,7 +316,7 @@ public class Aeroporto {
         for (Companhia companhia : Companhia.getCompanhia()) {
             System.out.println(companhia);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void listarHangar() {
         System.out.println("Listar Hangares");
@@ -324,7 +324,7 @@ public class Aeroporto {
         for (Hangar hangar : Hangar.getHangar()) {
             System.out.println(hangar);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void listarPista() {
         System.out.println("Listar Pistas");
@@ -332,7 +332,7 @@ public class Aeroporto {
         for (Pista pista : Pista.getPista()) {
             System.out.println(pista);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void listarVoo() {
         System.out.println("Listar Voos");
@@ -340,7 +340,7 @@ public class Aeroporto {
         for (Voo voo : Voo.getVoo()) {
             System.out.println(voo);
         }
-    }
+    } // FOR PARA PERCORRER TODOS OS VALORES CADASTRADOS E PRINTAR EM TELA
 
     public static void excluirAviao(Scanner scanner) {
         try {
@@ -351,7 +351,7 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 
     public static void excluirHelicoptero(Scanner scanner) {
         try {
@@ -362,7 +362,7 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 
     public static void excluirJato(Scanner scanner) {
         try {
@@ -373,7 +373,7 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 
     public static void excluirCompanhia(Scanner scanner) {
         try {
@@ -384,7 +384,7 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 
     public static void excluirHangar(Scanner scanner) {
         try {
@@ -395,7 +395,7 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 
     public static void excluirPista(Scanner scanner) {
         try {
@@ -406,7 +406,7 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 
     public static void excluirVoo(Scanner scanner) {
         try {
@@ -417,5 +417,5 @@ public class Aeroporto {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } // EXCLUI O VALOR CADASTRADO, DE ACORDO COM O ID DIGITADO
 }

@@ -4,8 +4,8 @@ public class Pista {
     
     private int id;
     private NumeroPista<String, String> numero;
-
     private static ArrayList<Pista> pistas = new ArrayList<>();
+    //ATRIBUTOS DA CLASSE
 
     public Pista(int id, String letras, String numeros) throws Exception {
         this.id = id;
@@ -14,7 +14,7 @@ public class Pista {
         this.numero = numero;
 
         setPista(this);
-    }
+    } // CONSTRUTOR DA CLASSE
 
     public int getId() {
         return id;
@@ -40,13 +40,13 @@ public class Pista {
         pistas.add(pista);
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public String toString() {
         return "id=" + id + "\n"
             + "numero=" + numero;
     }
 
-    @Override
+    @Override // USADO PARA LIMPAR 
     public boolean equals(Object obj) {
         if (obj instanceof Pista) {
             Pista pista = (Pista) obj;
@@ -62,7 +62,7 @@ public class Pista {
             }
         }
         throw new Exception("Pista não encontrada");
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA PELO ID
 
     public static boolean verificaNumero(
     NumeroPista<String, String> numero
@@ -73,7 +73,7 @@ public class Pista {
             }
         }
         return true;
-    }
+    } // VERIFICAÇÃO DA EXISTENCIA DO NUMERO DA PISTA, PARA NÃO SE REPETIR
 
     public static void excluir(int id) throws Exception {
         Pista pista = getPistaById(id);
